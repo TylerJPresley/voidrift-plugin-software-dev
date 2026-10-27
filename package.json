@@ -29,6 +29,9 @@
   "peerDependencies": {
     "@voidrift/core": "^0.1.0"
   },
+  "dependencies": {
+    "yaml": "2.9.1"
+  },
   "devDependencies": {
     "@langchain/core": "1.2.17",
     "@types/node": "24.19.2",
