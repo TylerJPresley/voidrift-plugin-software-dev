@@ -10,28 +10,42 @@ interface PluginFilesAccessor {
   remove(path: string): Promise<void>;
 }
 
-/** In-memory fake of pluginFiles and command registry for testing. */
+/** In-memory fake of pluginFiles and command registry for testing.
+ * Returns recursive listings (like the real accessor) with relative paths,
+ * sorted, including both files and directories. */
 class FakePluginFilesAccessor implements PluginFilesAccessor {
   private files: Map<string, string> = new Map();
 
   async list(subpath?: string): Promise<Array<{ name: string; kind: string }>> {
     const prefix = subpath ? (subpath.endsWith("/") ? subpath : subpath + "/") : "";
     const keys = Array.from(this.files.keys()).filter((k) => k.startsWith(prefix));
-    const immediateChildren = new Set<string>();
+
+    // Build the set of all entries (files and directories) recursively
+    const entries = new Set<{ name: string; kind: "file" | "dir" }>();
+    const dirs = new Set<string>();
+
     for (const key of keys) {
       const rest = key.slice(prefix.length);
-      const idx = rest.indexOf("/");
-      if (idx === -1) {
-        immediateChildren.add(rest);
-      } else {
-        immediateChildren.add(rest.slice(0, idx));
+      const parts = rest.split("/");
+
+      // Add the file itself
+      if (parts.length > 0 && parts[parts.length - 1] !== "") {
+        const name = rest;
+        entries.add({ name, kind: "file" });
+      }
+
+      // Add all parent directories
+      for (let i = 0; i < parts.length - 1; i++) {
+        const dirPath = parts.slice(0, i + 1).join("/");
+        if (!dirs.has(dirPath)) {
+          dirs.add(dirPath);
+          entries.add({ name: dirPath, kind: "dir" });
+        }
       }
     }
-    return Array.from(immediateChildren).map((name) => {
-      // Check if it's a file or dir by seeing if any files are under it
-      const isDir = keys.some((k) => k.startsWith(prefix + name + "/"));
-      return { name, kind: isDir ? "dir" : "file" };
-    });
+
+    // Sort by name
+    return Array.from(entries).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   async read(path: string): Promise<string | null> {
