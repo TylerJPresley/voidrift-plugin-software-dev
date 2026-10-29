@@ -1,0 +1,11 @@
+{
+  "name": "developer-loop",
+  "description": "Autonomous dev loop: plan, implement, test, verify. Asks only when blocked.",
+  "kind": "top-level",
+  "order": 40,
+  "label": "Dev Loop",
+  "unlisted": "allow",
+  "confirm": true,
+  "workers": ["task-developer", "verifier", "deployer"],
+  "tools": ["task", "list_skills", "load_skill", "read_manual"]
+}

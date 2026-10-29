@@ -1,0 +1,17 @@
+{
+  "name": "task-developer",
+  "description": "Implements one task autonomously in an isolated worktree.",
+  "kind": "worker",
+  "tools": [
+    "read_file",
+    "write_file",
+    "edit_file",
+    "glob_files",
+    "search_contents",
+    "workspace_map",
+    "execute_command",
+    "software_dev_apply_patch",
+    "software_dev_gate",
+    "software_dev_git_summary"
+  ]
+}

@@ -20,6 +20,7 @@ describe("software-dev plugin — registration", () => {
       },
       register: {
         command: () => {},
+        agents: () => {},
       },
     } as unknown as ScopedCoreApi;
     expect(() => register(stub)).not.toThrow();
@@ -39,6 +40,7 @@ describe("software-dev plugin — options validation (§5)", () => {
     },
     register: {
       command: () => {},
+      agents: () => {},
     },
   } as unknown as ScopedCoreApi);
 

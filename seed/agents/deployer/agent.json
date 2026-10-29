@@ -1,0 +1,12 @@
+{
+  "name": "deployer",
+  "description": "Drafts release artifacts (commit message, changelog, version summary).",
+  "kind": "worker",
+  "tools": [
+    "read_file",
+    "workspace_map",
+    "software_dev_commit_message",
+    "software_dev_pr_description",
+    "software_dev_git_summary"
+  ]
+}

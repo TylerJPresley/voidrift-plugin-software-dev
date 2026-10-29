@@ -1,0 +1,14 @@
+{
+  "name": "dev-reviewer",
+  "description": "Dev-specialised reviewer: checks tests, security, style, and correctness.",
+  "kind": "worker",
+  "tools": [
+    "read_file",
+    "glob_files",
+    "search_contents",
+    "workspace_map",
+    "execute_command",
+    "software_dev_gate",
+    "software_dev_git_summary"
+  ]
+}

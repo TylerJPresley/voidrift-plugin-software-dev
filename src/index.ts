@@ -79,6 +79,9 @@ export function register(core: ScopedCoreApi, opts?: unknown): void {
   }
   const store = new Store(core.workspace.pluginFiles);
   registerCommands(core, store);
+
+  // Register seed agent templates (software-dev-blueprint.md §2.2)
+  core.register.agents("seed/agents");
 }
 
 export default { register };
