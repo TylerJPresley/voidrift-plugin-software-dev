@@ -1,0 +1,13 @@
+{
+  "name": "security-reviewer",
+  "description": "Read-only release-prep audit: runs the project's audit script, judges only the flagged items, and returns ranked findings with evidence. Writes nothing.",
+  "kind": "worker",
+  "tools": [
+    "read_file",
+    "glob_files",
+    "search_files",
+    "workspace_map",
+    "terminal",
+    "read_manual"
+  ]
+}

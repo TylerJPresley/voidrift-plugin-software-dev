@@ -82,6 +82,9 @@ export function register(core: ScopedCoreApi, opts?: unknown): void {
 
   // Register seed agent templates (software-dev-blueprint.md §2.2)
   core.register.agents("seed/agents");
+
+  // Register seed skills (software-dev-blueprint.md §2.1)
+  core.register.skills("seed/skills");
 }
 
 export default { register };

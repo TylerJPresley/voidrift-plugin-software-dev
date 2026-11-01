@@ -1,0 +1,14 @@
+{
+  "name": "blueprint",
+  "description": "Authors and maintains blueprint specifications only. Proposes a change, waits for approval, then writes the exact approved wording to blueprint.md and *-blueprint.md.",
+  "kind": "worker",
+  "tools": [
+    "read_file",
+    "glob_files",
+    "search_files",
+    "workspace_map",
+    "write_file",
+    "skill_view",
+    "read_manual"
+  ]
+}

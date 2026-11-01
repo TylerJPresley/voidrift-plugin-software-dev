@@ -63,21 +63,24 @@ describe("software-dev seed agents — structure (§2.2)", () => {
     }
   });
 
-  it("seed contains exactly 9 agents", async () => {
+  it("seed contains exactly 12 agents", async () => {
     const agents = await fs.readdir(seedDir);
-    expect(agents).toHaveLength(9);
+    expect(agents).toHaveLength(12);
   });
 
   it("seed agents have expected names", async () => {
     const agents = (await fs.readdir(seedDir)).sort();
     const expected = [
+      "blueprint",
       "deployer",
       "dev-implementer",
       "dev-reviewer",
       "developer-loop",
+      "documenter",
       "interactive-developer",
       "lead-engineer-cr",
       "pm-idea",
+      "security-reviewer",
       "task-developer",
       "verifier",
     ];

@@ -9,17 +9,20 @@ import fs from "node:fs/promises";
 describe("software-dev seed agents e2e (§2.2)", () => {
   const seedDir = path.join(process.cwd(), "seed/agents");
 
-  it("(1) seed agents directory structure exists with all 9 agents", async () => {
+  it("(1) seed agents directory structure exists with all 12 agents", async () => {
     const agents = await fs.readdir(seedDir);
-    expect(agents).toHaveLength(9);
+    expect(agents).toHaveLength(12);
     expect(agents.sort()).toEqual([
+      "blueprint",
       "deployer",
       "dev-implementer",
       "dev-reviewer",
       "developer-loop",
+      "documenter",
       "interactive-developer",
       "lead-engineer-cr",
       "pm-idea",
+      "security-reviewer",
       "task-developer",
       "verifier",
     ]);

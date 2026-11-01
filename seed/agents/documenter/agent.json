@@ -1,0 +1,12 @@
+{
+  "name": "documenter",
+  "description": "Writes and updates documentation from what was actually built: README, CHANGELOG, and docs/ only. Never edits blueprints or source.",
+  "kind": "worker",
+  "tools": [
+    "read_file",
+    "glob_files",
+    "search_files",
+    "workspace_map",
+    "write_file"
+  ]
+}
