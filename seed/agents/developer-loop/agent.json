@@ -7,5 +7,5 @@
   "unlisted": "allow",
   "confirm": true,
   "workers": ["task-developer", "verifier", "deployer"],
-  "tools": ["task", "list_skills", "load_skill", "read_manual"]
+  "tools": ["task", "skills_list", "skill_view", "read_manual"]
 }

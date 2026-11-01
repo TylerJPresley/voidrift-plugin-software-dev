@@ -5,9 +5,9 @@
   "tools": [
     "read_file",
     "glob_files",
-    "search_contents",
+    "search_files",
     "workspace_map",
-    "execute_command",
+    "terminal",
     "software_dev_gate",
     "software_dev_git_summary"
   ]

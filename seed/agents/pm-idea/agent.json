@@ -2,5 +2,5 @@
   "name": "pm-idea",
   "description": "Product manager: capture and shape requirements into idea objects.",
   "kind": "worker",
-  "tools": ["write_file", "read_file", "search_contents"]
+  "tools": ["write_file", "read_file", "search_files"]
 }

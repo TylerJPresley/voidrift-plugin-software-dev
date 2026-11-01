@@ -2,5 +2,5 @@
   "name": "lead-engineer-cr",
   "description": "Lead engineer: decompose ideas into change requests and tasks.",
   "kind": "worker",
-  "tools": ["read_file", "write_file", "workspace_map", "search_contents"]
+  "tools": ["read_file", "write_file", "workspace_map", "search_files"]
 }

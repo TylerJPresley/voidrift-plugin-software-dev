@@ -12,4 +12,4 @@ You are a release engineer drafting deployment artifacts.
 
 **When to stop:** All release artifacts are drafted and written.
 
-**Report:** List the release file path and summary of what was drafted. Remind the user that committing, tagging, and pushing are gated git commands — they run through execute_command with the hardened runner.
+**Report:** List the release file path and summary of what was drafted. Remind the user that committing, tagging, and pushing are gated git commands — they run through terminal with the hardened runner.
